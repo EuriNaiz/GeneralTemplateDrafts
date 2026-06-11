@@ -1,0 +1,259 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #dcdcdc;
+  font-family: sans-serif;
+  color: #000;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* HEADER */
+.header {
+  padding: 40px 0; /* Aumentamos el espacio arriba y abajo del menú */
+}
+
+/* Este contenedor permite que el menú se estire casi al borde de la pantalla */
+.container-fluid {
+  width: 95%;          /* Usa el 95% del ancho de la pantalla (puedes subirlo a 96% o 97% si quieres más al extremo) */
+  max-width: 1800px;   /* Un límite enorme para que en pantallas gigantes se abra por completo */
+  margin: auto;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 85px; /* Hacemos el logo más grande (estaba en 60px) */
+  transition: transform 0.2s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05); /* Un pequeño efecto visual al pasar el mouse */
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 35px; /* Más separación entre los enlaces e iconos (estaba en 20px) */
+}
+
+.nav a {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px; /* Texto más grande y legible (estaba en 14px) */
+  font-weight: bold;
+  letter-spacing: 0.5px; /* Separa un poquito las letras para un look más premium */
+}
+
+.nav a:hover {
+  opacity: 0.7; /* Suaviza el color al pasar el mouse */
+}
+
+.nav img {
+  width: 26px; /* Iconos del menú más grandes (estaban en 20px) */
+  display: block;
+}
+
+/* SLIDER */
+.slider {
+  margin: 60px auto;
+  position: relative;
+}
+
+.slider-window {
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+  aspect-ratio: 3 / 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Flechas */
+.arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.arrow {
+  pointer-events: all;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.arrow:active {
+  transform: scale(0.9);
+}
+
+.arrow img {
+  width: 30px;
+}
+
+/* Dots */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.dots .dot {
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dots .dot.active {
+  background: #000;
+  transform: scale(1.2);
+}
+
+/* NOVEDADES */
+.news h2 {
+  text-align: center;
+  font-size: 48px;
+  margin: 100px 0 50px;
+}
+
+.post {
+  background: #eee;
+  border-radius: 20px;
+  padding: 30px;
+  border: 2px solid #bbb;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 40px;
+  border-radius: 5px;
+}
+
+.post-text {
+  margin: 30px 0 50px;
+  font-size: 16px;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #666;
+  font-size: 14px;
+}
+
+.post-icons img {
+  width: 20px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+/* GRID CUADRADO */
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  margin: 100px 0;
+}
+
+.square {
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.square img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* GRID PANORÁMICO */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 100px;
+}
+
+.panoramic {
+  aspect-ratio: 2 / 1; /* Esto lo hace horizontal (Ancho / Alto) */
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.panoramic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* FOOTER */
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  padding: 60px 0 80px;
+}
+
+.footer img {
+  width: 50px;
+}
